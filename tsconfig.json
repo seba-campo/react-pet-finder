@@ -1,0 +1,30 @@
+// {
+//     "compilerOptions": {
+//       "outDir": "./dist/",
+//       "noImplicitAny": true,
+//       "module": "es6",
+//       "target": "es5",
+//       "jsx": "react",
+//       "allowJs": true,
+//       "moduleResolution": "node",
+//       "allowImportingTsExtensions": true,
+//       "noEmit": false
+//     }
+//   }
+{
+  "compilerOptions": {
+    "target": "esnext",                  // Permite usar funciones modernas de JS
+    "module": "esnext",                  // Usa módulos ESNext para compatibilidad moderna
+    "lib": ["dom", "dom.iterable", "esnext"], // Incluye APIs del navegador y ESNext
+    "jsx": "react-jsx",                  // Habilita el nuevo transformador JSX (React 17+)
+    "outDir": "./dist/",                 // Carpeta para archivos compilados
+    "strict": true,                      // Activa todas las verificaciones estrictas
+    "moduleResolution": "node",          // Resolución de módulos compatible con Node.js
+    "allowJs": true,                     // Permite archivos .js en el proyecto
+    "skipLibCheck": true,                // Evita verificar tipos en librerías externas
+    "forceConsistentCasingInFileNames": true, // Case-sensitive para nombres de archivos
+    "esModuleInterop": true,             // Importaciones compatibles con CommonJS
+    "resolveJsonModule": true,           // Permite importar archivos .json                 // Evita generar archivos compilados (útil si usas herramientas como Webpack)
+  },                 // Define la carpeta a incluir en la compilación
+  "exclude": ["node_modules"]            // Excluye las dependencias externas
+}
