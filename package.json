@@ -18,8 +18,8 @@
     "react-router-dom": "^7.1.1"
   },
   "scripts": {
-    "dev": "npx webpack",
-    "build": "compila y genera el /dist con todo listo para usar",
+    "dev": "cross-env NODE_ENV=development webpack",
+    "build": "cross-env NODE_ENV=production webpack",
     "start": "yarn live-server"
   },
   "dependencies": {
