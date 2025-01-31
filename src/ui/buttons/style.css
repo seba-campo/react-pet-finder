@@ -1,0 +1,26 @@
+.button{
+    align-items: center;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    padding: 0.5rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    margin: auto;
+    cursor: pointer;
+    gap: 0.5rem;
+    outline: none;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #d0d5dd;
+}
+
+.off{
+    background: #f6f7f9;
+}
+
+.on{
+    background-color: #475467;
+    border-color: #475467;
+    color:#fff;
+}
