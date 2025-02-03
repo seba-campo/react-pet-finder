@@ -6,7 +6,7 @@ const brandLogo = require("../../lib/brand-logo.svg");
 export function Layout(){
 
     function handleClickLogo(){
-        alert("me lleva a la home")
+        
     }
 
     return (
