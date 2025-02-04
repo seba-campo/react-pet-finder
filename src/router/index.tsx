@@ -2,6 +2,7 @@ import * as React from "react";
 import { BrowserRouter, Routes, Route } from "react-router";
 import { Layout } from "../components/layout";
 import { Home } from "../pages/home";
+import { Mascotas } from "../pages/mascotas"
 
 
 export function Router(props: any){
@@ -10,6 +11,7 @@ export function Router(props: any){
         <Routes>
             <Route path="/" element={<Layout />}>
                 <Route index element={<Home />} />
+                <Route path="/mascotas" element={<Mascotas />} />
             </Route>
         </Routes>
       </BrowserRouter>

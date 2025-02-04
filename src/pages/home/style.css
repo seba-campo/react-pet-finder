@@ -1,3 +1,47 @@
+.root{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: calc( 100vh - 60px );
+    width: 100vw;
+    background: linear-gradient(191.08deg, #FFFFFF 8.17%, #DEF4F0 62.61%);
+}
+
+.titleDiv{
+    margin: 10px 0
+}
+
+.title{
+    margin: 0 0;
+    font-family: Poppins;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 54px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #EB6372;
+}
+
+.subtitleDiv{
+    height: 150px;
+    width: 280px;
+    margin: 12px 0;
+}
+
+.subtitle{
+    font-family: Poppins;
+    margin: 0 0;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 36px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: black
+}
+
 .heroDiv{
     width: 215.42px;
     height: 235px;
@@ -5,4 +49,12 @@
     left: 75px;
     gap: 0px;
     opacity: 0px;
+}
+
+.buttonsDiv{
+    display: flex;
+    height: 150px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
