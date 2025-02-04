@@ -20,3 +20,10 @@
     top: 60px;
     left: 0;
 }
+
+.outlet{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc( 100vh - 60px )
+}
