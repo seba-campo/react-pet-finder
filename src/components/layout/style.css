@@ -14,3 +14,9 @@
     height: 40px;
     cursor: pointer;
 }
+
+.sidebar{
+    position: absolute;
+    top: 60px;
+    left: 0;
+}

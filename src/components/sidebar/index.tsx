@@ -1,5 +1,6 @@
 import React, { ComponentProps } from "react";
 import * as css from "./styles.css"
+import { Hamburger } from "../../ui/buttons";
 
 type SidebarMenuProps = {
     disabled: boolean
@@ -10,11 +11,13 @@ function UserData(props: any){
 
     return (
         <div className={css.userdata}>
-            <div>
-                <p>Aca va el mail {props.mail}</p>
+            <div className={css.userDataDiv}>
+                <p className={css.userDataText}>
+                    {props.mail != null ?  props.mail : "Sesión no iniciada"}
+                </p>
             </div>
-            <div>
-                <p>Cerrar sesión</p>
+            <div className={css.userDataDiv}>
+                <p className={css.userDataTextClose}>Cerrar sesión</p>
             </div>
         </div>
     )
@@ -25,7 +28,18 @@ export function SidebarMenu({disabled}: SidebarMenuProps){
 
     return (
         <div className={`${css.root} ${toggled}`}>
-            <UserData/>
+            <div className={css.menuOptionDiv}>
+                <p className={css.menuOption}>Mis Datos</p>
+            </div>
+            <div className={css.menuOptionDiv}>
+                <p className={css.menuOption}>Mis Mascotas Reportadas</p>
+            </div>
+            <div className={css.menuOptionDiv}>
+                <p className={css.menuOption}>Reportar Mascota</p>
+            </div>
+            <div className={css.userDataDiv}>
+                <UserData/>
+            </div>
         </div>
     )
 }

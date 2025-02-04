@@ -29,7 +29,7 @@ export function Layout(){
                     <Hamburger/>
                 </div>
                 {/* Aca hay que ver si el div del sidebar se puede ocultar mientras esté off, ocupa un espacio innecesario */}
-                <div>
+                <div className={css.sidebar}>
                     <SidebarMenu disabled={menuState}/>
                 </div>
             </div>
