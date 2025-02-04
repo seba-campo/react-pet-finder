@@ -3,16 +3,12 @@ import { Hamburger } from "../../ui/buttons";
 import { SidebarMenu } from "../sidebar";
 import {Outlet} from "react-router";
 import { ImageSvg } from "../../ui/image-svg";
+import { NavLink } from "react-router";
 
 import * as css from "./style.css"; 
-const brandLogo = require("../../lib/brand-logo.svg");
 
 export function Layout(){
     const [menuState, setMenuState] = useState(false)
-
-    function handleClickLogo(){
-        console.log("click home")
-    }
 
     function handleHamburgerClick(){
         if(menuState){
@@ -26,9 +22,13 @@ export function Layout(){
     return (
         <div>
             <div className={css.navbar}>
-                <div className={css.brand} onClick={handleClickLogo}>
-                    <ImageSvg file="brand-logo.svg"/>   
-                </div>
+                <nav>
+                    <NavLink to="/">
+                        <div className={css.brand}>
+                            <ImageSvg file="brand-logo.svg"/>   
+                        </div>
+                    </NavLink>
+                </nav>
                 
                 <div onClick={handleHamburgerClick}>
                     <Hamburger/>
