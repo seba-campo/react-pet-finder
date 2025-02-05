@@ -1,8 +1,10 @@
-import * as React from "react";
+import  React from "react";
 import { BrowserRouter, Routes, Route } from "react-router";
 import { Layout } from "../components/layout";
-import { Home } from "../pages/home";
-import { Mascotas } from "../pages/mascotas"
+import { Loading } from "../components/fallback-loading";
+import { Home } from "../pages/Home";
+import { Mascotas } from "../pages/Mascotas"
+import { Suspense } from "react";
 
 
 export function Router(props: any){
@@ -10,8 +12,8 @@ export function Router(props: any){
       <BrowserRouter>
         <Routes>
             <Route path="/" element={<Layout />}>
-                <Route index element={<Home />} />
-                <Route path="/mascotas" element={<Mascotas />} />
+                  <Route index element={<Home />} />
+                  <Route path="/mascotas" element={<Mascotas />} />
             </Route>
         </Routes>
       </BrowserRouter>
