@@ -7,13 +7,11 @@ const root = document.querySelector(".root") as HTMLElement;
 
 export function App(props: any){
     return (
-        <React.Suspense fallback={<p>Loading</p>}>
             <RecoilRoot>
                 <div>
                     <Router/>
                 </div>
             </RecoilRoot>
-        </React.Suspense>
     )
 }
 

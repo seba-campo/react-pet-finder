@@ -13,8 +13,24 @@ export function Card({id, nombre, found, locationName, imagen}: CardType){
     
     
     return (
-        <div>
-            Esta es la card
+        <div className={css.root}>
+            <div className={css.pictureDiv}>
+
+            </div>
+            <div className={css.dataDiv}>
+                <div className={css.information}>
+                    <div className={css.name}>
+                        <p>{nombre}</p>
+                    </div>
+                    <div className={css.location}>
+                        <p>{locationName}</p>
+                    </div>
+                </div>
+
+                <div>
+                    <button>Alertar</button>
+                </div>
+            </div>
         </div>
     )
 }

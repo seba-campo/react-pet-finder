@@ -12,8 +12,7 @@ const petsAround = selector({
     key: 'petsAroundLocation',
     get: async ({get})=>{
         const pets = await fetch(`${API.API_URL}/pets`);
-        const response = await pets.json();
-
+        const response =  pets.status == 200 ? await pets.json() : new Error("Error fetching");
         return response
     }
 })
