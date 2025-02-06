@@ -12,6 +12,11 @@
     color: white;
 }
 
+.imagen{
+    width: 320px;
+    height: 136px;
+}
+
 .pictureDiv{
     width: 320px;
     height: 136px;
@@ -21,18 +26,31 @@
 .dataDiv{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: 330px;
 }
 
 .name p{
     font-size: 36px;
     font-weight: 700;
-    margin: 0;
+    margin: 0 10px;
 }
 
 .location p{
     font-size: 16px;
     font-weight: 700;
-    margin: 0;
+    margin: 0 10px;
+}
+
+.button{
+    width: 120px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: #EB6372;
+    color: white;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.75px;
+    margin: 0 10px;
 }

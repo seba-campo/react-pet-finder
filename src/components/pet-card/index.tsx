@@ -15,7 +15,7 @@ export function Card({id, nombre, found, locationName, imagen}: CardType){
     return (
         <div className={css.root}>
             <div className={css.pictureDiv}>
-
+                <img src={imagen} className={css.imagen} alt="" />
             </div>
             <div className={css.dataDiv}>
                 <div className={css.information}>
@@ -28,7 +28,7 @@ export function Card({id, nombre, found, locationName, imagen}: CardType){
                 </div>
 
                 <div>
-                    <button>Alertar</button>
+                    <button className={css.button}>Alertar</button>
                 </div>
             </div>
         </div>

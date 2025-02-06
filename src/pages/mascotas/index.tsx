@@ -1,19 +1,17 @@
 import React from "react";
-import { atom } from "recoil";
 import { useUserPosition } from "./hooks";
 import { Card } from "../../components/pet-card";
 import { Suspense } from "react";
 import { Loading } from "../../components/fallback-loading";
-import { useRecoilValue, selector } from "recoil";
-import { API } from "../../services/mainAPI/mainApi.urls";
+import * as css from "./style.css"
 
 export function Mascotas(){
     const pets = useUserPosition();
     
 
     return (
-        <div>   
-            <div>
+        <div className={css.root}>   
+            <div className={css.heroDiv}>
                 <p>Mascotas perdidas cerca</p>
             </div>
 
