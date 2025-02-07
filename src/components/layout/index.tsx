@@ -8,7 +8,7 @@ import { NavLink } from "react-router";
 import * as css from "./style.css"; 
 
 export function Layout(){
-    const [menuState, setMenuState] = useState(false)
+    const [menuState, setMenuState] = useState(true)
 
     function handleHamburgerClick(){
         if(menuState){
@@ -25,7 +25,7 @@ export function Layout(){
                 <nav>
                     <NavLink to="/">
                         <div className={css.brand}>
-                            <ImageSvg file="brand-logo.svg"/>   
+                            <ImageSvg file="brand-logo.svg"/>
                         </div>
                     </NavLink>
                 </nav>
@@ -33,7 +33,6 @@ export function Layout(){
                 <div onClick={handleHamburgerClick}>
                     <Hamburger/>
                 </div>
-                {/* Aca hay que ver si el div del sidebar se puede ocultar mientras esté off, ocupa un espacio innecesario */}
                 <div className={css.sidebar}>
                     <SidebarMenu disabled={menuState}/>
                 </div>

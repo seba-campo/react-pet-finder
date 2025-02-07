@@ -20,9 +20,6 @@ export function Hamburger(){
     <div>
         <button className={`${css.button} ${buttonBkg}`} onClick={handleClick}>
             <ImageSvg file="hamburger.svg"/>
-            {/* <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="var(--base-white)">
-                <path d="M2.5 10H17.5M2.5 5H17.5M2.5 15H17.5" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg> */}
         </button>
     </div>
     )
