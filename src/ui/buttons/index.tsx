@@ -30,27 +30,22 @@ type PrimaryButtonType = {
     onClickHandle?: () => void,
     redirect?: boolean,
     path?: any,
+    type?: "button" | "submit" | "reset",
     children: React.ReactNode
 }
 
-export function PrimaryButton({color, onClickHandle, redirect, children, path}: PrimaryButtonType){
-    var background = undefined;
+export function PrimaryButton({color, onClickHandle, redirect, children, path, type = "button"}: PrimaryButtonType){
+    let background = css.blueBtn; // Valor por defecto
 
-    switch (color){
-        case "blue":
-            background = css.blueBtn
-            break;
+    switch (color) {
         case "green":
-            background = css.greenBtn
+            background = css.greenBtn;
             break;
         case "red":
-            background = css.redBtn
+            background = css.redBtn;
             break;
         case "black":
-            background = css.blackBtn
-            break;
-        case undefined:
-            background = css.blueBtn;
+            background = css.blackBtn;
             break;
     }
 
@@ -70,12 +65,13 @@ export function PrimaryButton({color, onClickHandle, redirect, children, path}: 
     }
     else{
         return (
-            <div 
-            className={`${css.primary} ${background}`}
-            onClick={onClickHandle}   
+            <button 
+                type={type}
+                className={`${css.primary} ${background}`}
+                onClick={onClickHandle}   
             >
                     <p>{children}</p>
-            </div>
+            </button>
         )
     }
 
