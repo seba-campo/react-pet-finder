@@ -2,7 +2,7 @@ import React from "react";
 import * as css from "./style.css"
 import { ImageSvg } from "../../ui/image-svg";
 import { PrimaryButton } from "../../ui/buttons";
-import { API } from "../../services/mainAPI/mainApi.urls";
+import { loginUser } from "./login";
 import { authState, userCredentials } from "./authState";
 import { useRecoilState } from "recoil";
 import {useNavigate} from "react-router-dom"
@@ -19,21 +19,14 @@ export function Auth(){
         setUserCreds({
             email:dataObject.email as string,
             password: dataObject.password as string
+        });
+        
+        const login = await loginUser({
+            email:dataObject.email as string,
+            password: dataObject.password as string
         })
         
-        const response = await fetch(`${API.API_URL}/auth`, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(
-                        { 
-                            email: dataObject.email,
-                            password: dataObject.password 
-                        }
-                    ),
-        });
-        if(response.status === 200){
+        if(login == 200){
             setAuth(true)
             console.log("Logueado")
             navigate("/profileData")
@@ -41,6 +34,10 @@ export function Auth(){
         else{
             console.error("Error de autenticación")
         }
+    }
+
+    function handleLink(){
+        navigate("/register");
     }
 
 
@@ -78,7 +75,7 @@ export function Auth(){
                     </div>
                 </form>
     
-                <div>
+                <div onClick={handleLink}>
                     <p>Registrarse</p>
                 </div>
             </div>

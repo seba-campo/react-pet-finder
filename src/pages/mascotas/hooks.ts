@@ -3,9 +3,13 @@ import { atom, useRecoilValue, useRecoilState, useSetRecoilState, selector } fro
 import { API } from "../../services/mainAPI/mainApi.urls";
 
 
-const userPosition = atom({
+export const userPosition = atom({
     key: 'userPos',
-    default: {}
+    default: {
+        latitude: 0,
+        longitude: 0,
+        error: null
+    }
 })
 
 const petsAround = selector({
@@ -33,15 +37,6 @@ export function useUserPosition() {
                     longitude: pos.coords.longitude,
                     error: null,
                 })
-            },
-            (err) => {
-                // Manejo de errores
-                console.error('Error en geolocalización: ', err);
-                setUserPos({
-                    latitude: null,
-                    longitude: null,
-                    error: err.message,
-                });
             }
         );
     }, []); // El useEffect solo se ejecutará una vez al montar el componente

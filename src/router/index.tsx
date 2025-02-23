@@ -5,6 +5,8 @@ import { Loading } from "../components/fallback-loading";
 import { Home } from "../pages/Home";
 import { Mascotas } from "../pages/Mascotas"
 import { Auth } from "../pages/Auth";
+import {Profile} from "../pages/Profile";
+import {Register} from "../pages/Register";
 
 
 export function Router(props: any){
@@ -15,6 +17,8 @@ export function Router(props: any){
                   <Route index element={<Home />} />
                   <Route path="/mascotas" element={<Mascotas />} />
                   <Route path="/login" element={<Auth />}/>
+                  <Route path="/register" element={<Register/>}/>
+                  <Route path="/profileData" element={<Profile/>}/>
             </Route>
         </Routes>
       </BrowserRouter>
