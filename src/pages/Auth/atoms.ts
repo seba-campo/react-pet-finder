@@ -1,6 +1,4 @@
-import React, { useEffect,  useState } from "react";
-import { API } from "../../services/mainAPI/mainApi.urls";
-import { atom, useRecoilValue, selector, useSetRecoilState, useRecoilState } from "recoil";
+import { atom} from "recoil";
 
 export const authState = atom({
     key: 'userAuthState',
@@ -21,6 +19,6 @@ export const userData = atom({
         id: 0,
         nombre: "",
         email: "",
-        location: null,
+        location: {lat: 0, lng: 0}
     }
 })

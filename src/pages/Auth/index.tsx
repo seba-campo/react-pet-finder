@@ -31,6 +31,7 @@ export function Auth(){
         if(login == 200){
             setAuth(true)
             const fetchUserData = await getUserData(dataObject.email as string)
+            console.log(fetchUserData)
             setUser(fetchUserData)
             console.log("Logueado")
             navigate("/profileData")
