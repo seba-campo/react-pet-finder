@@ -9,6 +9,7 @@ import { Profile } from "../pages/Profile";
 import { Register } from "../pages/Register";
 import { Publish } from "../pages/PublishPet";
 import { Edit } from "../pages/EditPet";
+import { MisMascotas } from "../pages/MisMascotas";
 
 
 export function Router(props: any){
@@ -23,6 +24,7 @@ export function Router(props: any){
                   <Route path="/profileData" element={<Profile/>} />
                   <Route path="/publishPet" element={<Publish/>} />
                   <Route path="/editPet" element={<Edit/>} />
+                  <Route path="/myReports" element={<MisMascotas/>}
             </Route>
         </Routes>
       </BrowserRouter>

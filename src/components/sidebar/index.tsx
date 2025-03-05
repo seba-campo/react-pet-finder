@@ -61,9 +61,11 @@ export function SidebarMenu({disabled}: SidebarMenuProps){
                     </div>
                 </NavLink>
             </nav>
-            <div className={css.menuOptionDiv}>
-                <p className={css.menuOption}>Mis Mascotas Reportadas</p>
-            </div>
+                <NavLink to={"/myReports"} onClick={handleBarStyle}>
+                    <div className={css.menuOptionDiv}>
+                        <p className={css.menuOption}>Mis Mascotas Reportadas</p>
+                   </div>
+                </NavLink>
             <div className={css.menuOptionDiv}>
                 <p className={css.menuOption}>Reportar Mascota</p>
             </div>

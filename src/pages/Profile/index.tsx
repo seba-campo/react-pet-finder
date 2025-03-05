@@ -55,14 +55,14 @@ export function Profile(){
                     <label htmlFor="nombre">
                         NOMBRE
                     </label>
-                    <input className={css.inputDiv} value={user.nombre} type="text" name="nombre"/>
+                    <input className={css.inputDiv} defaultValue={user.nombre} type="text" name="nombre"/>
                 </div>
 
                 <div className={css.inputDiv}>
                     <label htmlFor="mail">
                         CORREO
                     </label>
-                    <input className={css.inputDiv} value={user.email} type="text" name="mail"/>
+                    <input className={css.inputDiv} defaultValue={user.email} type="text" name="mail"/>
                 </div>
 
                 <div className={css.inputDiv}>
