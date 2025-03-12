@@ -22,3 +22,9 @@
     text-align: center;
     margin: 0;
 }
+
+.reportForm{
+    position: absolute;
+    top: 60px;
+    width: 100%;
+}

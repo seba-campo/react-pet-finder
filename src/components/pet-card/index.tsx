@@ -11,6 +11,9 @@ type CardType = {
 
 export function Card({id, nombre, found, locationName, imagen}: CardType){
     
+    function handleAlert(){
+        console.log("Alertar")
+    }
     
     return (
         <div className={css.root}>
@@ -28,7 +31,7 @@ export function Card({id, nombre, found, locationName, imagen}: CardType){
                 </div>
 
                 <div>
-                    <button className={css.button}>Alertar</button>
+                    <button onClick={handleAlert} className={css.button}>Alertar</button>
                 </div>
             </div>
         </div>

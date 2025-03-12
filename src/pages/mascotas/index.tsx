@@ -3,6 +3,7 @@ import { useUserPosition } from "./hooks";
 import { Card } from "../../components/pet-card";
 import { Suspense } from "react";
 import { Loading } from "../../components/fallback-loading";
+import { ReportForm } from "../../components/report-form";
 import * as css from "./style.css"
 
 export function Mascotas(){
@@ -27,6 +28,10 @@ export function Mascotas(){
                     />
                 })}
             </Suspense>
+            <div className={css.reportForm}>
+                <ReportForm />   
+            </div>
+
         </div>
     )
 }
