@@ -24,7 +24,7 @@ export function Router(props: any){
                   <Route path="/profileData" element={<Profile/>} />
                   <Route path="/publishPet" element={<Publish/>} />
                   <Route path="/editPet" element={<Edit/>} />
-                  <Route path="/myReports" element={<MisMascotas/>}
+                  <Route path="/myReports" element={<MisMascotas/>} />
             </Route>
         </Routes>
       </BrowserRouter>

@@ -21,7 +21,7 @@ export function Card({id, nombre, found, locationName, imagen}: CardType){
                 <img src={imagen} className={css.imagen} alt="" />
             </div>
             <div className={css.dataDiv}>
-                <div className={css.information}>
+                <div>
                     <div className={css.name}>
                         <p>{nombre}</p>
                     </div>
