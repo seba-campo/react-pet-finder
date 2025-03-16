@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { Router } from "./router"
 import * as ReactDOM from "react-dom/client";
 import { RecoilRoot } from 'recoil';
