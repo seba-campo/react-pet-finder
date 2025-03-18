@@ -1,10 +1,10 @@
 import React from "react";
 import * as css from "./style.css"
 import { useRecoilState, useRecoilValue, useResetRecoilState, useSetRecoilState } from "recoil";
-import { userPosition } from "../Mascotas/hooks";
+import { userPosition } from "../mascotas/hookss";
 import { userData, authState } from "../Auth/atoms";
 import { PrimaryButton } from "../../ui/buttons";
-import { updateUser } from "./updateUser";       
+import { updateUser } from "./updateUser"
 
 
 export function Profile(){

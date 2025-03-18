@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import { Layout } from "../components/layout";
 import { Loading } from "../components/fallback-loading";
 import { Home } from "../pages/Home";
-import { Mascotas } from "../pages/Mascotas"
+import { Mascotas } from "../pages/mascotas"
 import { Auth } from "../pages/Auth";
 import { Profile } from "../pages/Profile";
 import { Register } from "../pages/Register";
