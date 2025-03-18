@@ -23,8 +23,6 @@ jobs:
 
       # Usá Node 18 para mayor compatibilidad (o dejá 14 si es requisito)
       - uses: actions/setup-node@v3
-        with:
-          node-version: "18"
 
       # Instalación limpia
       - run: npm install
