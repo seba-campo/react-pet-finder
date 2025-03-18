@@ -12,7 +12,7 @@
     "forceConsistentCasingInFileNames": true, // Case-sensitive para nombres de archivos
     "esModuleInterop": true,             // Importaciones compatibles con CommonJS
     "resolveJsonModule": true,           // Permite importar archivos .json                 // Evita generar archivos compilados (útil si usas herramientas como Webpack)
-    "baseUrl": "src"
+    "baseUrl": "./src"
     },                 // Define la carpeta a incluir en la compilación
   "exclude": ["node_modules"]            // Excluye las dependencias externas
 }

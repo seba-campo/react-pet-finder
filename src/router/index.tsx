@@ -1,15 +1,14 @@
 import  React from "react";
 import { BrowserRouter, Routes, Route } from "react-router";
-import { Layout } from "../components/layout/index";
-import { Loading } from "../components/fallback-loading/index";
-import { Home } from "../pages/Home/home";
-import { Mascotas } from "../pages/Mascotas/mascotas";
-import { Auth } from "../pages/Auth/auth";
-import { Profile } from "../pages/Profile/profile";
-import { Register } from "../pages/Register/registerComponent";
-import { Publish } from "../pages/PublishPet/publishPet";
-import { Edit } from "../pages/EditPet/editPet";
-import { MisMascotas } from "../pages/MisMascotas/misMascotas";
+import { Layout } from "components/layout";
+import { Mascotas } from "pages/Mascotas";
+import { Home } from "pages/Home";
+import { Auth } from "pages/Auth";
+import { Register } from "pages/Register";
+import { Profile } from "pages/Profile/profile";
+import { Publish } from "pages/PublishPet/publishPet";
+import { Edit } from "pages/EditPet";
+import { MisMascotas } from "pages/MisMascotas";
 
 
 export function Router(props: any){
