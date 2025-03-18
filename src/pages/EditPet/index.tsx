@@ -1,7 +1,5 @@
 import React from "react";
 import * as css from "./style.css"
-import { useRecoilState, useResetRecoilState } from "recoil";
-import { userData, authState } from "../Auth/atoms";
 import { PrimaryButton } from "../../ui/buttons";
 
 
