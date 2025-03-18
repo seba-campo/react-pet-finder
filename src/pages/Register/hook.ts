@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
-import { userPosition } from "../mascotas/hookss";
+import { userPosition } from "../Mascotas/hookss";
 
 export const useUserLocation = () => {
     const [userPos, setUserPos] = useRecoilState(userPosition);
