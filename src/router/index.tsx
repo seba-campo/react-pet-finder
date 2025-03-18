@@ -2,14 +2,14 @@ import  React from "react";
 import { BrowserRouter, Routes, Route } from "react-router";
 import { Layout } from "../components/layout/index";
 import { Loading } from "../components/fallback-loading/index";
-import { Home } from "../pages/Home/index";
-import { Mascotas } from "../pages/mascotas/index";
-import { Auth } from "../pages/Auth/index";
-import { Profile } from "../pages/Profile/index";
-import { Register } from "../pages/Register/index";
-import { Publish } from "../pages/PublishPet/index";
-import { Edit } from "../pages/EditPet/index";
-import { MisMascotas } from "../pages/MisMascotas/index";
+import { Home } from "../pages/Home/home";
+import { Mascotas } from "../pages/Mascotas/mascotas";
+import { Auth } from "../pages/Auth/auth";
+import { Profile } from "../pages/Profile/profile";
+import { Register } from "../pages/Register/registerComponent";
+import { Publish } from "../pages/PublishPet/publishPet";
+import { Edit } from "../pages/EditPet/editPet";
+import { MisMascotas } from "../pages/MisMascotas/misMascotas";
 
 
 export function Router(props: any){
