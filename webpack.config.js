@@ -1,6 +1,8 @@
 const path = require("path");
 const liveServer = require("live-server");
 const dev = process.env.NODE_ENV == "development";
+const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
+
 
 if (dev) {
   liveServer.start({
@@ -13,6 +15,9 @@ module.exports = {
   watch: true,
   mode: "development",
   entry: "./src/App.tsx",
+  plugins: [
+    new CaseSensitivePathsPlugin()
+  ],
   module: {
     rules: [
       {
