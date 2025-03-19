@@ -14,6 +14,6 @@
     "resolveJsonModule": true,           // Permite importar archivos .json                 // Evita generar archivos compilados (útil si usas herramientas como Webpack)
     "baseUrl": "./src"
     },      
-  "include": ["src/**/*.ts", "src/index.tsx"],           // Define la carpeta a incluir en la compilación
+  "include": ["src/**/*.ts", "src/**/*.tsx", "customs.d.ts"],
   "exclude": ["node_modules"]            // Excluye las dependencias externas
 }
