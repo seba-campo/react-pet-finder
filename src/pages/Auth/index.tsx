@@ -7,7 +7,7 @@ import { getUserData } from "./userData";
 import { authState, userCredentials, userData } from "./atoms";
 import { useRecoilState } from "recoil";
 import {useNavigate} from "react-router-dom"
-
+// Hola
 export function Auth(){
     const [auth, setAuth] = useRecoilState(authState);
     const [userCreds, setUserCreds] = useRecoilState(userCredentials);
