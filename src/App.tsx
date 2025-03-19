@@ -1,5 +1,5 @@
 import React from "react"
-import { Router } from "./router"
+import { Router } from "router/index"
 import * as ReactDOM from "react-dom/client";
 import { RecoilRoot } from 'recoil';
 

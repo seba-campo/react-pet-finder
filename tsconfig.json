@@ -8,5 +8,10 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "baseUrl": "./src"
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "customs.d.ts"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "customs.d.ts"],
+  "paths": {
+      "pages/*": ["pages/*"],
+      "components/*": ["components/*"],
+      "@/*": ["*"]
+    }
 }
