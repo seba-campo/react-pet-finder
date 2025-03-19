@@ -13,10 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: rm -rf node_modules package-lock.json
       - run: npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_REACT_PET_FINDER }}
-          projectId: react-pet-finder
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PETFINDER_IN_REACT }}
+          projectId: petfinder-in-react
