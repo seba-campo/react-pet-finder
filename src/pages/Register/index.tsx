@@ -3,15 +3,39 @@ import * as css from "./style.css"
 import { PrimaryButton } from "../../ui/buttons";
 import { useUserLocation } from "./hook";
 import { registerUser } from "./register";
+import { useNavigate } from "react-router-dom";
 
 export function Register(){
-    const [UserData, setUserData] = useState({})
+    const navigate = useNavigate();
     const userPos = useUserLocation();
+    const [UserData, setUserData] = useState({})
+
+    interface RegisterFormData {
+        nombre: string;
+        email: string;
+        password: string;
+        repassword: string;
+        location: {
+            lat: number;
+            lng: number;
+        };
+    }
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const formData = new FormData(e.currentTarget);
-        const dataObject = Object.fromEntries(formData);
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+        const entries = Object.fromEntries(formData.entries());
+        const dataObject: RegisterFormData = {
+            nombre: entries.nombre as string,
+            email: entries.email as string,
+            password: entries.password as string,
+            repassword: entries.repassword as string,
+            location: {
+                lat: userPos.latitude,
+                lng: userPos.longitude
+            }
+        };
 
         if (dataObject.password === dataObject.repassword) {
             setUserData({

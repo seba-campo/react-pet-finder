@@ -14,30 +14,37 @@ export function Auth(){
     const [user, setUser] = useRecoilState(userData)
     const navigate = useNavigate();
 
-    const handleSubmit = async (e: any) => {
+    interface LoginFormData {
+        email: string;
+        password: string;
+    }
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const formData = new FormData(e.target);
-        const dataObject = Object.fromEntries(formData);
-        setUserCreds({
-            email:dataObject.email as string,
-            password: dataObject.password as string
-        });
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+        const entries = Object.fromEntries(formData.entries());
+        const dataObject: LoginFormData = {
+            email: entries.email as string,
+            password: entries.password as string
+        };
         
-        const login = await loginUser({
-            email:dataObject.email as string,
-            password: dataObject.password as string
-        })
-        
-        if(login == 200){
-            setAuth(true)
-            const fetchUserData = await getUserData(dataObject.email as string)
-            console.log(fetchUserData)
-            setUser(fetchUserData)
-            console.log("Logueado")
-            navigate("/profileData")
-        }
-        else{
-            console.error("Error de autenticación")
+        try {
+            setUserCreds(dataObject);
+            
+            const loginStatus = await loginUser(dataObject);
+            
+            if (loginStatus === 200) {
+                const userData = await getUserData(dataObject.email);
+                setUser(userData);
+                setAuth(true);
+                navigate("/profileData");
+            } else {
+                throw new Error("Authentication failed");
+            }
+        } catch (error) {
+            console.error("Error de autenticación:", error);
+            // You might want to show an error message to the user here
         }
     }
 

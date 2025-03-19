@@ -1,19 +1,11 @@
 {
   "compilerOptions": {
-    "target": "esnext",                  // Permite usar funciones modernas de JS
-    "module": "esnext",                  // Usa módulos ESNext para compatibilidad moderna
-    "lib": ["dom", "dom.iterable", "esnext"], // Incluye APIs del navegador y ESNext
-    "jsx": "react-jsx",                  // Habilita el nuevo transformador JSX (React 17+)
-    "outDir": "./dist/",                 // Carpeta para archivos compilados
-    "strict": true,                      // Activa todas las verificaciones estrictas
-    "moduleResolution": "node",          // Resolución de módulos compatible con Node.js
-    "allowJs": true,                     // Permite archivos .js en el proyecto
-    "skipLibCheck": true,                // Evita verificar tipos en librerías externas
-    "forceConsistentCasingInFileNames": true, // Case-sensitive para nombres de archivos
-    "esModuleInterop": true,             // Importaciones compatibles con CommonJS
-    "resolveJsonModule": true,           // Permite importar archivos .json                 // Evita generar archivos compilados (útil si usas herramientas como Webpack)
-    "baseUrl": "./src"
-    },      
-  "include": ["src/**/*.ts", "src/**/*.tsx", "customs.d.ts"],
-  "exclude": ["node_modules"]            // Excluye las dependencias externas
+    "jsx": "react",
+    "target": "ES5",
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "moduleResolution": "Node",
+    "lib": ["dom", "dom.iterable", "esnext"]
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "customs.d.ts"]
 }
