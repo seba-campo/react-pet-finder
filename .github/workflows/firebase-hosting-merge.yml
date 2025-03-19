@@ -16,7 +16,7 @@ jobs:
           node-version: "14"
       - run: npm cache clean --force
       - run: npm install
-      - run: npm build
+      - run: npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
