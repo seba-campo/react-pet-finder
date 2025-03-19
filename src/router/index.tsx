@@ -5,7 +5,7 @@ import { Mascotas } from "@/pages/Mascotas1";          // o "pages/Mascotas" si 
 import { Home } from "@/pages/Home";
 import { Auth } from "@/pages/Auth";
 import { Register } from "@/pages/Register";
-import { Profile } from "@/pages/Profile/profile";
+import { Profile } from "@/pages/Profile";
 import { Publish } from "@/pages/PublishPet/publishPet";
 import { Edit } from "@/pages/EditPet";
 import { MisMascotas } from "@/pages/MisMascotas";
