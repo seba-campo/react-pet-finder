@@ -2,24 +2,59 @@
 # https://github.com/firebase/firebase-tools
 
 name: Deploy to Firebase Hosting on merge
-"on":
+on:
   push:
     branches:
       - main
+
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
+      # Paso 1: Checkout del código
       - uses: actions/checkout@v2
+
+      # Paso 2: Configuración de Node.js
       - uses: actions/setup-node@v2
         with:
           node-version: "14"
+
+      # Paso 3: Limpiar la caché de npm
       - run: npm cache clean --force
+
+      # Paso 4: Instalar dependencias
       - run: npm install
+
+      # Paso 5: Mostrar la versión de Node y npm para depuración
+      - run: |
+          echo "Node version:"
+          node -v
+          echo "NPM version:"
+          npm -v
+
+      # Paso 6: Mostrar el árbol de directorios para asegurarnos que estamos en el lugar correcto
+      - run: |
+          echo "Current directory tree:"
+          ls -R
+
+      # Paso 7: Ejecutar el build
       - run: npm run build
+
+      # Paso 8: Mostrar el estado de los archivos después del build
+      - run: |
+          echo "Built files:"
+          ls -R ./build
+
+      # Paso 9: Desplegar a Firebase Hosting con depuración activada
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_DWF_M8 }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_REACT_PET_FINDER }}"
           channelId: live
           projectId: dwf-m8
+        env:
+          FIREBASE_AUTH_TOKEN: ${{ secrets.FIREBASE_AUTH_TOKEN }}
+          DEBUG: "true"  # Activa el modo de depuración de Firebase CLI
+
+      # Paso 10: Depuración final (si el despliegue fallara)
+      - run: echo "Deployment completed."
