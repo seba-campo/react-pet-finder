@@ -1,0 +1,30 @@
+.root{
+    background: linear-gradient(191.08deg, #FFFFFF 8.17%, #DEF4F0 62.61%);  
+    height: calc(100vh - 60px);
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.heroDiv{
+    height: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.heroDiv p{
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 36px;
+    text-align: center;
+    margin: 0;
+}
+
+.reportForm{
+    position: absolute;
+    top: 60px;
+    width: 100%;
+}
