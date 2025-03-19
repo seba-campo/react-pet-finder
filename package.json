@@ -28,6 +28,7 @@
     "start": "yarn live-server"
   },
   "dependencies": {
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "uuid": "^11.1.0"
   }
 }
