@@ -17,7 +17,7 @@ jobs:
       # Paso 2: Configuración de Node.js
       - uses: actions/setup-node@v2
         with:
-          node-version: "14"
+          node-version: "18"
 
       # Paso 3: Limpiar la caché de npm
       - run: npm cache clean --force
