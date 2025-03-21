@@ -1,4 +1,7 @@
 import React from "react";
+import { ReportForm } from "../report-form";
+import { useRecoilState } from "recoil";
+import {reportFormState} from "./atoms"
 import * as css from "./style.css"
 
 type CardType = {
@@ -9,11 +12,8 @@ type CardType = {
     imagen: string
 }
 
-export function Card({id, nombre, found, locationName, imagen}: CardType){
-    
-    function handleAlert(){
-        console.log("Alertar")
-    }
+export function Card({id, nombre, found, locationName, imagen}: CardType){    
+    const [reportState, setReportState] = useRecoilState(reportFormState);    
     
     return (
         <div className={css.root}>
@@ -31,7 +31,7 @@ export function Card({id, nombre, found, locationName, imagen}: CardType){
                 </div>
 
                 <div>
-                    <button onClick={handleAlert} className={css.button}>Alertar</button>
+                    <button className={css.button}>Alertar</button>
                 </div>
             </div>
         </div>
