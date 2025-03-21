@@ -1,18 +1,17 @@
 const path = require("path");
 const liveServer = require("live-server");
-const dev = process.env.NODE_ENV == "development";
 
+// Detectar entorno
+const dev = process.env.NODE_ENV === "development";
 
 if (dev) {
   liveServer.start({
-    // root: "./",
     file: "index.html",
   });
 }
 
 module.exports = {
-  watch: true,
-  mode: "development",
+  mode: dev ? "development" : "production",
   entry: "./src/App.tsx",
   plugins: [],
   module: {
@@ -24,17 +23,18 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: ["style-loader", {
-          loader: "css-loader",
-          options: {
-            modules: true
-          }
-        }]
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: { modules: true },
+          },
+        ],
       },
       {
         test: /\.svg$/,
-        loader: 'svg-inline-loader'
-      }
+        loader: "svg-inline-loader",
+      },
     ],
   },
   resolve: {
@@ -44,14 +44,17 @@ module.exports = {
       "@": path.resolve(__dirname, "src"),
       pages: path.resolve(__dirname, "src/pages"),
       components: path.resolve(__dirname, "src/components"),
-    }
+    },
   },
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
-    publicPath: "/"
+    publicPath: "/",
   },
-  devServer: {
-    historyApiFallback: true, // Redirige todas las rutas a index.html
-  }
+  ...(dev && {
+    watch: true,
+    devServer: {
+      historyApiFallback: true,
+    },
+  }),
 };
