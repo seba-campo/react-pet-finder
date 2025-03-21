@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Paso 1: Checkout del código
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       # Paso 2: Configuración de Node.js
       - uses: actions/setup-node@v2
@@ -33,17 +33,9 @@ jobs:
           npm -v
 
       # Paso 6: Mostrar el árbol de directorios para asegurarnos que estamos en el lugar correcto
-      - run: |
-          echo "Current directory tree:"
-          ls -R
 
       # Paso 7: Ejecutar el build
       - run: npm run build
-
-      # Paso 8: Mostrar el estado de los archivos después del build
-      - run: |
-          echo "Built files:"
-          ls -R ./build
 
       # Paso 9: Desplegar a Firebase Hosting con depuración activada
       - uses: FirebaseExtended/action-hosting-deploy@v0
@@ -51,7 +43,7 @@ jobs:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_REACT_PET_FINDER }}"
           channelId: live
-          projectId: dwf-m8
+          projectId: react-pet-finder
         env:
           FIREBASE_AUTH_TOKEN: ${{ secrets.FIREBASE_AUTH_TOKEN }}
           DEBUG: "true"  # Activa el modo de depuración de Firebase CLI
