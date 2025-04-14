@@ -1,29 +1,16 @@
 .root{
     width: 100vw;
     height: calc(100vh - 60px);
+    background: linear-gradient(191.08deg, #FFFFFF 8.17%, #DEF4F0 62.61%);
+    font-family: Poppins;
     display: flex;
     background-color: transparent;
     flex-direction: column;
     justify-content: center;
-}
-
-.wrapper{
-    width: 100vw;
-    /* height: 603px; */
-    background: #26302E;
-    color: #FFF;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
-    border-radius: 10px;
 }
 
-.titleDiv{
-    margin: 10px 0
-}
-
-.heroTitle{
+.hero{
     margin: 0 0;
     font-family: Poppins;
     font-size: 36px;
@@ -34,10 +21,10 @@
     text-decoration-skip-ink: none;
 }
 
-.subtitleDiv{
-    height: 150px;
-    width: 280px;
+.subHero{
     margin: 12px 0;
+    text-align: center;
+    font-size: 24px;
 }
 
 .subtitle{

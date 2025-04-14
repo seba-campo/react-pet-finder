@@ -1,7 +1,7 @@
 import React from "react";
-import { ReportForm } from "../report-form";
 import { useRecoilState } from "recoil";
 import {reportFormState} from "./atoms"
+import { useNavigate } from "react-router-dom";
 import * as css from "./style.css"
 
 type CardType = {
@@ -9,11 +9,17 @@ type CardType = {
     nombre: string,
     found: boolean,
     locationName: string,
-    imagen: string
+    imagen: string,
+    userId: number
 }
 
-export function Card({id, nombre, found, locationName, imagen}: CardType){    
-    const [reportState, setReportState] = useRecoilState(reportFormState);    
+export function Card({id, nombre, found, locationName, imagen, userId}: CardType){    
+    const navigate = useNavigate();
+    const [reportData, setReportData] = useRecoilState(reportFormState);
+    function handleReport(){
+        setReportData({id: id, nombre: nombre, userId: userId});
+        navigate("/reportPet");
+    }
     
     return (
         <div className={css.root}>
@@ -31,7 +37,7 @@ export function Card({id, nombre, found, locationName, imagen}: CardType){
                 </div>
 
                 <div>
-                    <button className={css.button}>Alertar</button>
+                    <button className={css.button} onClick={handleReport}>Alertar</button>
                 </div>
             </div>
         </div>
