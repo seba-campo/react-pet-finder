@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useReducer } from "react";
 import * as css from "./style.css"
 import { PrimaryButton } from "../../ui/buttons";
 import { reportFormState } from "@/components/pet-card/atoms";
@@ -32,8 +32,15 @@ export function ReportPet(){
         };
 
         console.log(await submitReport(dataObject));
-    };            
-            
+    };
+    
+    const mockSubmit = async (e: React.FormEvent<HTMLFormElement>)=>{
+        e.preventDefault();
+        setTimeout(()=>{
+            alert("Email sent");
+        }, 1500)
+        
+    }
 
     return (
         <div className={css.root}>
@@ -44,7 +51,7 @@ export function ReportPet(){
             </div>
                 
 
-            <form onSubmit={handleSubmit} className={css.form}>
+            <form onSubmit={mockSubmit} className={css.form}>
                 <div className={css.inputDiv}>
                     <label htmlFor="nombre">
                        TU NOMBRE

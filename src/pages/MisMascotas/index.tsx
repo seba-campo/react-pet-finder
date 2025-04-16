@@ -50,6 +50,7 @@ export function MisMascotas(){
                         imagen={p.imagen}
                         found={p.found}
                         locationName={p.locationName}
+                        userId={user.id}
                     />
                 ))}
             </Suspense>
